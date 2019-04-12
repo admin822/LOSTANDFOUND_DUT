@@ -1,0 +1,17 @@
+<template name="anchorTmp">
+  <view class='eachitem'>
+    <view class="ava">
+      <image class="postImg" mode='aspectFill' src="{{item.filepath[0]}}"></image>
+      <text wx:if="{{item.type=='失物招领'}}" class="lost">{{item.type}}</text>
+      <text wx:elif="{{item.type=='寻物启事'}}" class="found">{{item.type}}</text>
+    </view>
+    <view class="info">
+      <image src='/images/white.png' class='underground'></image>
+      <!-- <text class="time">{{item.time}}</text> -->
+      <button type='primary' data-id="{{item._id}}" class='ok' catchtap='ok'>已交接</button>
+      <button type='warn' data-id="{{item._id}}" class='del' catchtap='del'>删除</button>
+      <text wx:if="{{item.generalsubmit==0}}" class="stuff">[学生卡]{{item.stuff_name}}{{item.card_number}}</text>
+      <text wx:elif="{{item.generalsubmit==1}}" class="stuff">{{item.stuff_name}}</text>
+    </view>
+  </view>
+</template>

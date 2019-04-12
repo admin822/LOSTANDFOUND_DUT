@@ -1,0 +1,94 @@
+<form bindsubmit="bindsubmit">
+  <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+      <view class="page__bd">
+          <view class="weui-cells__title">学生卡信息</view>
+          <view 
+            class="weui-cells weui-cells_after-title"
+            
+          >
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">持卡人姓名</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input name="cardname" class="weui-input" placeholder="请输入姓名"/>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">持卡人学号</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input name="cardid" class="weui-input" type='number' placeholder="请输入学号" />
+                  </view>
+              </view>
+              
+          
+              <view class="weui-cell weui-cell_select">
+                  <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                      <view class="weui-label">院系</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <picker bindchange="bindMajorChange" value="{{majorIndex}}" range="{{major}}">
+                          <view 
+                            class="weui-select weui-select_in-select-after item"
+                          >{{major[majorIndex]}}</view>
+                      </picker>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">QQ</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input name="input_qq" class="weui-input" type='number' placeholder="请输入QQ"/>
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">联系电话</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input name="input_phone" class="weui-input" type='number' placeholder="请输入手机号码" />
+                  </view>
+              </view>
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">地点</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input name="input_place" class="weui-input" placeholder="请输入地点" />
+                  </view>
+              </view>
+              
+          </view>
+          </view>
+          
+          <view 
+          class="weui-cells weui-cells_after-title item"
+          style='margin-top: 5px;'
+        >
+          <view 
+            class="weui-cell"
+            style='padding: 0 0 7px 5px;'
+          >
+            <radio-group class="radio-group" bindchange="radioChange">
+                <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}" style='width:350rpx;' color='#f96159'>
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+          </view>
+        </view>
+
+
+
+          <view class="weui-btn-area" style='margin-top:15rpx;'>
+              <button 
+                class="weui-btn"
+                form-type='submit'
+                style="background-color:#f96159;color:white;"
+              >确定</button>
+          </view>
+      </view>
+  
+</form>
